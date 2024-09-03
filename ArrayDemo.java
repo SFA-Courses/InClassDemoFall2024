@@ -2,38 +2,37 @@ public class ArrayDemo {
     public static void main(String[] args) {
 
         
-        int[][] values = new int[4][5];
-        int maxRow = values.length;
-        int maxCol = values[0].length;
-        //int totalRow = 0;
-        //int val = 0;
+        int[][] values = new int[4][5];        
+        
 
         // Problem 1
-        for (int i = 0; i < maxRow; i++) {          
-            for(int j = 0; j < maxCol; j++) {
-                values[i][j] = j + 1;
+        for (int row = 0; row < values.length; row++) {
+            for (int col = 0; col < values[row].length; col++) {
+                values[row][col] = col + 1;
+            }
+        }
+       
+        // Problem 2
+        for (int row = 0; row < values.length; row++) {
+            for (int col = 0; col < values[row].length; col++) {
+                values[row][col] = col + row;
             }
         }
 
-        //  Problem 2
-        for (int row= 0; row <  maxRow; row++) {          
-            for(int col = 0; col < maxCol; col++) {
-                values[row][col] =  row + col;
-            }
-        }
-
-        // Problem 3
         values = new int[5][5];
-       /*  for (int row= 0; row <  maxRow; row++) {          
-            for(int col = 0; col < maxCol; col++) {
-                if (col == row)
-                    values[row][col] = col +1;
+        /*  Problem 3
+        for (int row = 0; row < values.length; row++) {
+            for (int col = 0; col < values[row].length; col++) {
+                if (row == col) {        
+                    values[row][col] = row+1;
+                } else {
+                    values[row][col] = 0;
+                }
             }
-        }
-            */
-        
-        for (int i = 0; i < values.length; i++)
-            values[i][i] = i +1;
+        } */
+
+        for (int i = 0; i < values.length; i++) 
+            values[i][i] = i+1;
 
         printArray(values);
     }
