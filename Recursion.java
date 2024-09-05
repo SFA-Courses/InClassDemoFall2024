@@ -1,7 +1,8 @@
 public class Recursion {
     public static void main(String[] args) {
-        //System.out.println(factorial(7));
-        System.out.println(fib(8));
+        head(5);
+        System.out.println();
+        tail(5);
     }
 
     public static int factorial(int n) {
@@ -24,4 +25,23 @@ public class Recursion {
         else
             return fib(n-1) + fib(n-2);
     }
+
+    public static void head(int n) {
+        if (n == 0)
+            System.out.println(n);
+        else {
+            head(n-1);
+            System.out.println(n);
+        }
+    }
+
+    public static void tail(int n) {
+        if (n == 0)
+            System.out.println(n);
+        else {            
+            System.out.println(n);
+            tail(n-1);
+        }
+    }
+
 }
