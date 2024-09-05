@@ -1,7 +1,5 @@
 public class Recursion002 {
-    public static void main(String[] args) {
-        System.out.println(fib(8));
-    }
+   
 
     public static int factorial(int n) {
         if (n==0)
@@ -26,5 +24,29 @@ public class Recursion002 {
             return 1;         // is 1
          
         return fib(n-1) + fib(n-2);  // add previous 2 Fibonacci numbers
+    }
+
+    public static void head(int n) {
+        if (n==0)
+            System.out.println(n);
+        else {
+            head(n-1);
+            System.out.println(n);
+        }
+    }
+
+    public static void tail(int n) {
+        if (n==0)
+            System.out.println(n);
+        else {           
+            System.out.println(n);
+            tail(n-1);
+        }
+    }
+
+    public static void main(String[] args) {
+        head(5);
+        System.out.println();
+        tail(5);
     }
 }
