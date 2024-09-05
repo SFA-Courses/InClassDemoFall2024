@@ -1,5 +1,5 @@
 public class RecArray002 {
-    private static int[] array = {10, 20, 30, 40, 50};
+    private static int[] array = {-10, -20, -30, -40, -50};
 
     /**
      * This method will sum up all array elements 
@@ -30,7 +30,33 @@ public class RecArray002 {
         return sumByTail(0, 0);
     }
 
+    // tail recursion
+    public static int findMax(int index, int currentMax) {
+        if (index == array.length) // if we've seen all the elements
+            return currentMax;  // return the currently known max
+        else {
+            if (currentMax < array[index]) 
+                currentMax = array[index];
+            // currentMax = Math.max(array[index], currentMax);
+            return findMax(index+1, currentMax);
+        }
+
+    }
+    // head
+    public static int findMaxHead(int index) {
+        if (index == array.length-1)
+            return array[index];
+        else {
+            int previousMax = findMaxHead(index+1);
+            return Math.max(previousMax, array[index]);
+        }
+    }
+
+    public static int max() {
+        return findMaxHead(0);
+    }
+
     public static void main(String[] args) {
-        System.out.println(sum());
+        System.out.println(max());
     }
 }
