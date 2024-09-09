@@ -1,5 +1,5 @@
 public class RecArray {
-    private static int[] intArray = {-20, -20, -50, -40, -10};
+    private static int[] intArray = {-20, -30, -50, -40, -10};
 
     /**
      * This method adds all array element from index to the end.
@@ -52,7 +52,28 @@ public class RecArray {
         return maxIntArray(0, Integer.MIN_VALUE);
     }
 
-    public static void main(String[] args) {
-        System.out.println(findMax());
+    private static int binarySearch(int low, int high, int key) {
+        if (high >= low) {
+            int mid = (low + high) /2;
+
+            if (intArray[mid] == key)
+                return mid;
+            
+            if (key < intArray[mid]) // key is on the left
+                return binarySearch(low, mid-1, key); // look to left of middel
+            else // key > middle element, key is on the right
+                return binarySearch(mid+1, high, key);
+        }
+        // if we reach here, the element is not in the array
+        return -1;
+    } 
+    public static int binarySearch(int key) {
+        return binarySearch(0, intArray.length-1, key);
     }
+
+    public static void main(String[] args) {
+        System.out.println(binarySearch(-100000));
+    }
+
+
 }
