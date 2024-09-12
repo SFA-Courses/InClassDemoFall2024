@@ -34,7 +34,10 @@ public class Recursion {
             System.out.println(n);
         }
     }
-
+    /**
+     * 
+     * @param n
+     */
     public static void tail(int n) {
         if (n == 0)
             System.out.println(n);
