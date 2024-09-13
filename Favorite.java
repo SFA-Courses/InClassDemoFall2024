@@ -18,5 +18,4 @@ public class Favorite {
         String s = this.name + " " + this.date + "\n";
         return s + url.toString();
     }
-
 }
