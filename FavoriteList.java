@@ -13,17 +13,17 @@ public class FavoriteList implements ListADT<Favorite> {
     public boolean isEmpty() {
         return (this.numFavorites == 0);
     }
-    
+
     public boolean isFull() {
         return (this.numFavorites == MAX_FAVORITES);
     }
 
     @Override
     public int size() {
-        return this.numFavorites;        
+        return this.numFavorites;
     }
 
-    @Override    
+    @Override
     public void add(int index, Favorite item) throws ListException {
         // check for exceptions
         if (this.isFull())
@@ -31,14 +31,14 @@ public class FavoriteList implements ListADT<Favorite> {
 
         if (index < 0)
             throw new ListException("Index must be non-negative.");
-        
+
         if (index > this.size())
             throw new ListException("Index outside of allowable range.");
 
         // shift the elements to the right
         for (int i = this.size(); i > index; i--)
-            this.favorites[i] = this.favorites[i-1];
-        
+            this.favorites[i] = this.favorites[i - 1];
+
         // insert the new element
         this.favorites[index] = item;
 
@@ -48,8 +48,20 @@ public class FavoriteList implements ListADT<Favorite> {
 
     @Override
     public void remove(int index) throws ListException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'remove'");
+        if (index < 0 || index >= this.size())
+            throw new ListException("Index out of range.");
+
+        if (index == MAX_FAVORITES - 1)
+            this.favorites[index] = null;
+        else {
+            // shift everything after the element to remove
+            // to the left
+            for (int i = index; i < this.size(); i++)
+                this.favorites[i] = this.favorites[i + 1];
+        }
+
+        // reduce the size of the list by 1
+        this.numFavorites--;
     }
 
     @Override
@@ -60,8 +72,20 @@ public class FavoriteList implements ListADT<Favorite> {
 
     @Override
     public Favorite get(int index) throws ListException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get'");
+        if (index < 0 || index >= this.size())
+            throw new ListException("Index out of range.");
+
+        return this.favorites[index];
     }
-    
+
+    @Override
+    public String toString() {
+        String s = "";
+        for (int i = 0; i < this.size(); i++)
+            s = s + i + ": " + this.get(i) + " \n ";
+
+        return s;
+
+    }
+
 }
