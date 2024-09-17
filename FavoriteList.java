@@ -48,7 +48,24 @@ public class FavoriteList implements ListADT<Favorite> {
 
     @Override
     public void remove(int index) throws ListException {
-    
+        if (index < 0 || index >= this.size()) 
+            throw new ListException("Index out of range.");
+        
+        for (int i = index; i < this.size()-1; i++) 
+            this.favorites[i]  = this.favorites[i+1];
+
+        this.favorites[size() -1] = null;
+
+        this.numFavorites--;
+    }
+
+    @Override
+    public String toString() {
+        String s = "";
+        for (int i = 0; i < this.size(); i++) 
+            s = s + i + ": " + this.get(i) + "\n";
+
+        return s;
     }
 
     @Override
@@ -59,7 +76,10 @@ public class FavoriteList implements ListADT<Favorite> {
 
     @Override
     public Favorite get(int index) throws ListException {
-    
+        if (index < 0 || index >= this.size()) 
+            throw new ListException("Index out of range.");
+
+        return this.favorites[index];
     }
 
     
