@@ -1,19 +1,5 @@
 public class FriendsList implements ListADT<Friend> {
 
-    private Node<Friend> head; // first node in the list
-    private int numFriends; 
-    // empty friends list
-    public FriendsList() {
-        this.numFriends = 0;
-        this.head = null;
-    }
-    // friends list with 1 element
-    public FriendsList(Friend firstFriend) {
-        this.numFriends= 1;
-        this.head = new Node<Friend>(firstFriend);
-    }
-
-
     @Override
     public boolean isEmpty() {
         // TODO Auto-generated method stub
@@ -49,5 +35,6 @@ public class FriendsList implements ListADT<Friend> {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'get'");
     }
+
     
 }
