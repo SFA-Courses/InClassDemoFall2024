@@ -11,7 +11,7 @@ public class TestFavoriteList {
 
         System.out.println();
         System.out.println("Testing remove: ");
-        favList.remove(1);
+        favList.remove(2);
         System.out.println(favList);
 
         System.out.println();
