@@ -10,7 +10,7 @@ public class TestFriendList {
 
         System.out.println();
         System.out.println("Testing remove: ");
-        friendList.remove(1);
+        friendList.remove(2);
         System.out.println(friendList);
 
         System.out.println();
