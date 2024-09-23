@@ -26,7 +26,7 @@ public class FriendsList implements ListADT<Friend> {
         return this.numFriends;
     }
 
-    @Override
+    
     /**
      * This method returns the index of the friend in the 
      * list. If the friend is not in the list, return -1.
