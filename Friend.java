@@ -20,7 +20,16 @@ public class Friend {
     }
 
     public void setStatus(boolean online) {
-        this.status = online;
+        this.status = online;        
+    }
+
+    @Override 
+    public boolean equals(Object other) {
+        if ( !(other instanceof Friend) )
+            return false;
+
+        Friend otherFriend = (Friend) other;
+        return this.name.equals(otherFriend.name);
     }
 
     @Override
