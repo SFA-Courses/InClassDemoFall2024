@@ -33,7 +33,29 @@ public class FriendsList implements ListADT<Friend> {
      * @param friend - a friend to look for
      * @return index of friend in the list or -1 if not in list
      */
-
+     public int indexOf(Friend friend) {        
+            for (int i = 0; i < this.size(); i++) {
+                if (this.get(i).equals(friend))
+                    return i;
+            }
+            return -1;
+        }
+     
+        public int find (Friend friend){
+            Node <Friend> currentNode = this.head;
+            int index = 0;
+    
+            while (currentNode != null){
+                if (currentNode.getItem().equals(friend)){
+                    return index;
+                } else {
+                    currentNode = currentNode.getNext();
+                    index++;
+                }
+            }
+            return -1;
+    
+        }
   
 
     // precondition 0 <= index < size()

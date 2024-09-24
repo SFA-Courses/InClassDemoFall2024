@@ -29,7 +29,7 @@ public class Friend {
             return false;
 
         Friend otherFriend = (Friend) other;
-        
+        return this.name.equals(otherFriend.name);
     }
 
     @Override
