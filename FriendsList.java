@@ -26,18 +26,15 @@ public class FriendsList implements ListADT<Friend> {
         return this.numFriends;
     }
 
-    
     /**
-     * This method returns the index of the friend in the 
+     * This method returns the index of the friend in the
      * list. If the friend is not in the list, return -1.
+     * 
      * @param friend - a friend to look for
      * @return index of friend in the list or -1 if not in list
      */
-    public int find(Friend friend) {
-        return 42;
-    }
 
-
+  
 
     // precondition 0 <= index < size()
     private Node<Friend> getNodeAt(int index) {
@@ -104,7 +101,7 @@ public class FriendsList implements ListADT<Friend> {
         String s = "[";
         if (!this.isEmpty()) {
             Node<Friend> current = this.head;
-            for (int i = 0; i < this.size()-1; i++) {
+            for (int i = 0; i < this.size() - 1; i++) {
                 s = s + current.getItem().toString() + ", ";
                 current = current.getNext();
             }
