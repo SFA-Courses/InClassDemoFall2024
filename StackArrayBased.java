@@ -6,7 +6,7 @@ public class StackArrayBased<E> implements StackADT<E> {
 
     // create an empty stack
     public StackArrayBased() {
-        this.item = new Object[MAX_CAPACITY];
+        this.items = new Object[MAX_CAPACITY];
         this.top = -1; // use -1 to indicate empty
     }
     
@@ -25,14 +25,14 @@ public class StackArrayBased<E> implements StackADT<E> {
             throw new StackException("Stack is full.");
 
         this.top++; 
-        this.item[this.top] = newItem;
+        this.items[this.top] = newItem;
 
     }
     
     // remove and return stack top
     public E pop() throws StackException {
         if (this.isEmpty())
-            throw new StackExpection("Stack is emtpy.");
+            throw new StackException("Stack is emtpy.");
 
         // get the top
         E currentTop =  (E) this.items[this.top]; // cast Object to type E
@@ -45,7 +45,7 @@ public class StackArrayBased<E> implements StackADT<E> {
     // returns stack top
     public E peek() throws StackException {
         if (this.isEmpty())
-            throw new StackExpection("Stack is emtpy.");
+            throw new StackException("Stack is emtpy.");
 
         return (E) this.items[this.top]; // cast Object to type E
     }
@@ -53,7 +53,7 @@ public class StackArrayBased<E> implements StackADT<E> {
     @Override
     public void popAll() {
         this.top = -1;
-        this.item = new Object[MAX_CAPACITY];
+        this.items = new Object[MAX_CAPACITY];
     }
 
     @Override
