@@ -1,6 +1,6 @@
 public class TestStackReference {
     public static void main(String[] args) {
-        StackReferenceBased<Character> letters = new StackReferenceBased<Character>();
+        StackReferencedBased<Character> letters = new StackReferencedBased<Character>();
 
         for (char c = 'a'; c <= 'z'; c++) {
             Character ch = c;
@@ -10,8 +10,8 @@ public class TestStackReference {
         System.out.println(letters);
         System.out.println();
         //letters.reverseStack();
-        System.out.println("Reversed Stack");
-        System.out.println(letters);
+        //System.out.println("Reversed Stack");
+        //System.out.println(letters);
 
     }
 

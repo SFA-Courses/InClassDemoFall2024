@@ -59,7 +59,7 @@ public class ParaChecker extends JFrame implements KeyListener {
     }
 
     private boolean paraMatch(String eq) {
-        StackReferenceBased<Character> parStack = new StackReferenceBased<Character>();
+        StackReferencedBased<Character> parStack = new StackReferencedBased<Character>();
         for (int i = 0; i < eq.length(); i++) {
             if (eq.charAt(i) == '(')
                 parStack.push('(');
