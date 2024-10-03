@@ -9,7 +9,7 @@ public class TestStackReference {
         System.out.println("Original Stack (all letters)");
         System.out.println(letters);
         System.out.println();
-        letters.reverseStack();
+        //letters.reverseStack();
         System.out.println("Reversed Stack");
         System.out.println(letters);
 
