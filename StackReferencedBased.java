@@ -61,6 +61,14 @@ public class StackReferencedBased<E> implements StackADT<E> {
         return s + "]";
     }
    
-
+    // reverse the items in the stack
+    public void reverseStack() {
+        StackReferencedBased<E> helper = new StackReferencedBased<E>();
+        while (!this.isEmpty()) {
+            E item = this.pop();
+            helper.push(item);
+        }
+        this.top = helper.top;
+    }
    
 }
