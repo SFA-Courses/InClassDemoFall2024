@@ -20,7 +20,7 @@ public class QueueArrayBased<E> implements QueueADT<E> {
     }
 
     @Override
-    public void removeAll() {
+    public void dequeueAll() {
         this.size = 0;
         this.queueArray = new Object[MAX_CAPACITY];
     }

@@ -23,8 +23,8 @@ public class MessageQueue extends JFrame {
 
     public MessageQueue() {
         // holds the work orders
-        //this.queue = new QueueArrayBased<String>();
-        this.queue = new QueueCircular<String>();
+        this.queue = new QueueArrayBased<String>();
+        //this.queue = new QueueCircular<String>();
         
         JPanel panel = new JPanel();
         txtIssue = new JTextField();
