@@ -1,6 +1,7 @@
 public class TestQueue {
     public static void main(String[] args) {
-        QueueArrayBased<Integer> queue = new QueueArrayBased<Integer>();
+       // QueueArrayBased<Integer> queue = new QueueArrayBased<Integer>();
+       QueueReferenedBased<Integer> queue = new QueueReferenedBased<Integer>();
         for (int i = 0; i < 10; i++)
             queue.enqueue(i);
             
